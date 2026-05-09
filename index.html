@@ -4,14 +4,574 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Evaluating Music Context Preservation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="page">
-    <h1>
-      EVALUATING MUSIC CONTEXT PRESERVATION:<br>
-      A MULTI-FACET FRAMEWORK FOR MUSIC EDITING SYSTEMS
-    </h1>
+
+  <div class="grain"></div>
+
+  <header class="hero">
+    <p class="eyebrow">Research Demo</p>
+    <h1>Evaluating Music<br>Context Preservation</h1>
+    <p class="subtitle">A Multi-Facet Framework for Music Editing Systems</p>
+    <p class="desc">Listen to original and edited audio pairs, with preservation scores computed by our evaluation framework.</p>
+    <nav class="toc">
+      <a href="#harmony"><span class="toc-num">01</span>Harmony</a>
+      <a href="#melodic"><span class="toc-num">02</span>Melody</a>
+      <a href="#rhythm"><span class="toc-num">03</span>Rhythm &amp; Meter</a>
+      <a href="#structural"><span class="toc-num">04</span>Structure</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============ HARMONY ============ -->
+    <section id="harmony" class="eval-section reveal">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2>Harmony</h2>
+        <p class="section-desc">Measures how well harmonic content (chroma profiles, key, chords) is preserved after pitch-shifting edits.</p>
+      </div>
+
+      <div class="edit-group">
+        <h3>+7 Semitone Transposition</h3>
+
+        <div class="clip-pair">
+          <div class="audio-row">
+            <div class="audio-cell">
+              <span class="audio-tag tag-original">Original</span>
+              <audio controls preload="none">
+                <source src="audio/original/012.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+            <div class="audio-cell">
+              <span class="audio-tag tag-edited">Edited</span>
+              <audio controls preload="none">
+                <source src="audio/harmony/+7semitone/012.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
+          <div class="metrics">
+            <div class="metric">
+              <span class="metric-label">Chroma DTW Similarity</span>
+              <span class="metric-value">0.9555</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Chroma Similarity</span>
+              <span class="metric-value">0.9887</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">CoF Distance</span>
+              <span class="metric-value">0.1667</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="clip-pair">
+          <div class="audio-row">
+            <div class="audio-cell">
+              <span class="audio-tag tag-original">Original</span>
+              <audio controls preload="none">
+                <source src="audio/original/003.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+            <div class="audio-cell">
+              <span class="audio-tag tag-edited">Edited</span>
+              <audio controls preload="none">
+                <source src="audio/harmony/+7semitone/003.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
+          <div class="metrics">
+            <div class="metric">
+              <span class="metric-label">Chroma DTW Similarity</span>
+              <span class="metric-value">0.9503</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Chroma Similarity</span>
+              <span class="metric-value">0.9851</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">CoF Distance</span>
+              <span class="metric-value">0.1667</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="edit-group">
+        <h3>&minus;3 Semitone Transposition</h3>
+
+        <div class="clip-pair">
+          <div class="audio-row">
+            <div class="audio-cell">
+              <span class="audio-tag tag-original">Original</span>
+              <audio controls preload="none">
+                <source src="audio/original/047.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+            <div class="audio-cell">
+              <span class="audio-tag tag-edited">Edited</span>
+              <audio controls preload="none">
+                <source src="audio/harmony/-3semitone/047.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
+          <div class="metrics">
+            <div class="metric">
+              <span class="metric-label">Chroma DTW Similarity</span>
+              <span class="metric-value">0.9229</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Chroma Similarity</span>
+              <span class="metric-value">0.9832</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">CoF Distance</span>
+              <span class="metric-value">0.8333</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="clip-pair">
+          <div class="audio-row">
+            <div class="audio-cell">
+              <span class="audio-tag tag-original">Original</span>
+              <audio controls preload="none">
+                <source src="audio/original/037.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+            <div class="audio-cell">
+              <span class="audio-tag tag-edited">Edited</span>
+              <audio controls preload="none">
+                <source src="audio/harmony/-3semitone/037.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
+          <div class="metrics">
+            <div class="metric">
+              <span class="metric-label">Chroma DTW Similarity</span>
+              <span class="metric-value">0.8728</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Chroma Similarity</span>
+              <span class="metric-value">0.9693</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">CoF Distance</span>
+              <span class="metric-value">0.3333</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MELODIC ============ -->
+    <section id="melodic" class="eval-section reveal">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2>Melody</h2>
+        <p class="section-desc">Evaluates how melodic contour and motif structure are maintained after pitch-contour inversions.</p>
+      </div>
+
+      <div class="edit-group">
+        <h3>Climax Inversion</h3>
+
+        <div class="clip-pair">
+          <div class="audio-row">
+            <div class="audio-cell">
+              <span class="audio-tag tag-original">Original</span>
+              <audio controls preload="none">
+                <source src="audio/original/032.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+            <div class="audio-cell">
+              <span class="audio-tag tag-edited">Edited</span>
+              <audio controls preload="none">
+                <source src="audio/melodic/climaxinv/032.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
+          <div class="metrics">
+            <div class="metric">
+              <span class="metric-label">Contour DTW Similarity</span>
+              <span class="metric-value">0.9999</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Motif n-gram Recall</span>
+              <span class="metric-value">1.0000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="clip-pair">
+          <div class="audio-row">
+            <div class="audio-cell">
+              <span class="audio-tag tag-original">Original</span>
+              <audio controls preload="none">
+                <source src="audio/original/026.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+            <div class="audio-cell">
+              <span class="audio-tag tag-edited">Edited</span>
+              <audio controls preload="none">
+                <source src="audio/melodic/climaxinv/026.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
+          <div class="metrics">
+            <div class="metric">
+              <span class="metric-label">Contour DTW Similarity</span>
+              <span class="metric-value">0.9998</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Motif n-gram Recall</span>
+              <span class="metric-value">1.0000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="edit-group">
+        <h3>Full Inversion</h3>
+
+        <div class="clip-pair">
+          <div class="audio-row">
+            <div class="audio-cell">
+              <span class="audio-tag tag-original">Original</span>
+              <audio controls preload="none">
+                <source src="audio/original/007.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+            <div class="audio-cell">
+              <span class="audio-tag tag-edited">Edited</span>
+              <audio controls preload="none">
+                <source src="audio/melodic/fullinv/007.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
+          <div class="metrics">
+            <div class="metric">
+              <span class="metric-label">Contour DTW Similarity</span>
+              <span class="metric-value">0.9952</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Motif n-gram Recall</span>
+              <span class="metric-value">0.9866</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="clip-pair">
+          <div class="audio-row">
+            <div class="audio-cell">
+              <span class="audio-tag tag-original">Original</span>
+              <audio controls preload="none">
+                <source src="audio/original/013.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+            <div class="audio-cell">
+              <span class="audio-tag tag-edited">Edited</span>
+              <audio controls preload="none">
+                <source src="audio/melodic/fullinv/013.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
+          <div class="metrics">
+            <div class="metric">
+              <span class="metric-label">Contour DTW Similarity</span>
+              <span class="metric-value">0.9931</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Motif n-gram Recall</span>
+              <span class="metric-value">1.0000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RHYTHM ============ -->
+    <section id="rhythm" class="eval-section reveal">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2>Rhythm &amp; Meter</h2>
+        <p class="section-desc">Assesses whether beat timing, tempo, and metric structure are preserved through temporal edits.</p>
+      </div>
+
+      <div class="edit-group">
+        <h3>Beat Offset &minus;150 ms</h3>
+
+        <div class="clip-pair">
+          <div class="audio-row">
+            <div class="audio-cell">
+              <span class="audio-tag tag-original">Original</span>
+              <audio controls preload="none">
+                <source src="audio/original/015.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+            <div class="audio-cell">
+              <span class="audio-tag tag-edited">Edited</span>
+              <audio controls preload="none">
+                <source src="audio/rhythm/offset-150ms/015.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
+          <div class="metrics">
+            <div class="metric">
+              <span class="metric-label">Beat F-measure</span>
+              <span class="metric-value">0.3918</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Information Gain</span>
+              <span class="metric-value">0.3016</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Folded Beat Diff</span>
+              <span class="metric-value">62.7689</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="clip-pair">
+          <div class="audio-row">
+            <div class="audio-cell">
+              <span class="audio-tag tag-original">Original</span>
+              <audio controls preload="none">
+                <source src="audio/original/011.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+            <div class="audio-cell">
+              <span class="audio-tag tag-edited">Edited</span>
+              <audio controls preload="none">
+                <source src="audio/rhythm/offset-150ms/011.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
+          <div class="metrics">
+            <div class="metric">
+              <span class="metric-label">Beat F-measure</span>
+              <span class="metric-value">0.1714</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Information Gain</span>
+              <span class="metric-value">0.3341</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Folded Beat Diff</span>
+              <span class="metric-value">0.0000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="edit-group">
+        <h3>Tempo +50 BPM</h3>
+
+        <div class="clip-pair">
+          <div class="audio-row">
+            <div class="audio-cell">
+              <span class="audio-tag tag-original">Original</span>
+              <audio controls preload="none">
+                <source src="audio/original/023.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+            <div class="audio-cell">
+              <span class="audio-tag tag-edited">Edited</span>
+              <audio controls preload="none">
+                <source src="audio/rhythm/tempo+50/023.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
+          <div class="metrics">
+            <div class="metric">
+              <span class="metric-label">Beat F-measure</span>
+              <span class="metric-value">0.4427</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Information Gain</span>
+              <span class="metric-value">0.3257</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Folded Beat Diff</span>
+              <span class="metric-value">0.0000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="clip-pair">
+          <div class="audio-row">
+            <div class="audio-cell">
+              <span class="audio-tag tag-original">Original</span>
+              <audio controls preload="none">
+                <source src="audio/original/038.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+            <div class="audio-cell">
+              <span class="audio-tag tag-edited">Edited</span>
+              <audio controls preload="none">
+                <source src="audio/rhythm/tempo+50/038.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
+          <div class="metrics">
+            <div class="metric">
+              <span class="metric-label">Beat F-measure</span>
+              <span class="metric-value">0.3569</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Information Gain</span>
+              <span class="metric-value">0.0805</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Folded Beat Diff</span>
+              <span class="metric-value">41.0156</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STRUCTURAL ============ -->
+    <section id="structural" class="eval-section reveal">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2>Structure</h2>
+        <p class="section-desc">Checks whether large-scale form (section boundaries, repetition patterns) is maintained after structural rearrangement.</p>
+      </div>
+
+      <div class="edit-group">
+        <h3>AAA (Repeat First Section)</h3>
+
+        <div class="clip-pair">
+          <div class="audio-row">
+            <div class="audio-cell">
+              <span class="audio-tag tag-original">Original</span>
+              <audio controls preload="none">
+                <source src="audio/original/002.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+            <div class="audio-cell">
+              <span class="audio-tag tag-edited">Edited</span>
+              <audio controls preload="none">
+                <source src="audio/structural/AAA/002.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
+          <div class="metrics">
+            <div class="metric">
+              <span class="metric-label">Pairwise F-measure</span>
+              <span class="metric-value">1.0000</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Adjusted Rand Index</span>
+              <span class="metric-value">1.0000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="clip-pair">
+          <div class="audio-row">
+            <div class="audio-cell">
+              <span class="audio-tag tag-original">Original</span>
+              <audio controls preload="none">
+                <source src="audio/original/016.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+            <div class="audio-cell">
+              <span class="audio-tag tag-edited">Edited</span>
+              <audio controls preload="none">
+                <source src="audio/structural/AAA/016.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
+          <div class="metrics">
+            <div class="metric">
+              <span class="metric-label">Pairwise F-measure</span>
+              <span class="metric-value">1.0000</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Adjusted Rand Index</span>
+              <span class="metric-value">1.0000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="edit-group">
+        <h3>ABA (Recapitulation)</h3>
+
+        <div class="clip-pair">
+          <div class="audio-row">
+            <div class="audio-cell">
+              <span class="audio-tag tag-original">Original</span>
+              <audio controls preload="none">
+                <source src="audio/original/003.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+            <div class="audio-cell">
+              <span class="audio-tag tag-edited">Edited</span>
+              <audio controls preload="none">
+                <source src="audio/structural/ABA/003.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
+          <div class="metrics">
+            <div class="metric">
+              <span class="metric-label">Pairwise F-measure</span>
+              <span class="metric-value">1.0000</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Adjusted Rand Index</span>
+              <span class="metric-value">1.0000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="clip-pair">
+          <div class="audio-row">
+            <div class="audio-cell">
+              <span class="audio-tag tag-original">Original</span>
+              <audio controls preload="none">
+                <source src="audio/original/017.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+            <div class="audio-cell">
+              <span class="audio-tag tag-edited">Edited</span>
+              <audio controls preload="none">
+                <source src="audio/structural/ABA/017.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
+          <div class="metrics">
+            <div class="metric">
+              <span class="metric-label">Pairwise F-measure</span>
+              <span class="metric-value">1.0000</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Adjusted Rand Index</span>
+              <span class="metric-value">1.0000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
+
+  <footer>
+    <div class="footer-rule"></div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
 </body>
 </html>
