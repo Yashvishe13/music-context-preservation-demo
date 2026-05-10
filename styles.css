@@ -322,11 +322,36 @@ audio::-webkit-media-controls-panel {
 }
 
 /* ── Metrics ── */
+.metrics-all {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.metric-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.metric-cat {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  padding: 5px 14px;
+  background: var(--bg-warm);
+  border: 1px solid var(--border);
+  border-bottom: none;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
 .metrics {
   display: flex;
   gap: 2px;
   background: var(--surface-raised);
-  border-radius: var(--radius-sm);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) var(--radius-sm);
   overflow: hidden;
   border: 1px solid var(--border);
 }
@@ -433,6 +458,10 @@ footer {
     padding: 10px 12px;
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  .metric-value {
+    font-size: 1rem;
   }
 
   .toc {
